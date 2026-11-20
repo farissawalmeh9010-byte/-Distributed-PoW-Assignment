@@ -1,0 +1,22 @@
+﻿# Compiled Go binaries
+build/
+*.exe
+*.exe~
+
+# Backup and temporary files
+*.backup
+*.bak
+*.tmp
+*.log
+
+# Editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Go test outputs
+*.test
+coverage.out

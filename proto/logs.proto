@@ -1,0 +1,32 @@
+
+syntax = "proto3";
+
+package logs;
+
+option go_package = "distributed-pow/gen/logs;logspb";
+
+service LogService {
+  // Unary RPC
+  rpc GetServerInfo(InfoRequest) returns (InfoResponse);
+
+  // Server-streaming RPC
+  rpc StreamLogs(LogRequest) returns (stream LogMessage);
+}
+
+message InfoRequest {}
+
+message InfoResponse {
+  string server_name = 1;
+  string version = 2;
+}
+
+message LogRequest {
+  int32 count = 1;
+}
+
+message LogMessage {
+  int32 sequence = 1;
+  string level = 2;
+  string message = 3;
+  string timestamp = 4;
+}
